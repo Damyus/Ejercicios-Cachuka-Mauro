@@ -15,18 +15,19 @@ public class AdivinaelNumero {
             int max = 100;
             int numerojuego = (int) (Math.random() * ((max - min) + 1));
 
-            System.out.printf("%s, he esogido un numero entre %d y %d, adivinalo", nombrejugador, min, max);
+            System.out.printf("%s, he esogido un numero entre %d y %d, adivinalo\n", nombrejugador, min, max);
             int numerojugador;
+            do {
+                System.out.println("escoge un numero");
+                numerojugador = Entrada.nextInt();
+                if (numerojuego < numerojugador) {
+                    System.out.println("muy alto, adivina otra vez");
+                } else if(numerojuego > numerojugador) {
+                    System.out.println("muy bajo, adivina otra vez");
+                }
+                intentos++;
+            } while (numerojuego != numerojugador);
 
-            System.out.println("escoge un numero");
-            numerojugador = Entrada.nextInt();
-
-            if (numerojuego < numerojugador) {
-                System.out.println("muy alto, adivina otra vez");
-            } else if(numerojuego > numerojugador) {
-                System.out.println("muy bajo, adivina otra vez");
-            }
-            intentos++;
 
 
 
